@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta content="width=dives-width, initial-scale=1.0">
+    <title>ARRAY METHOD</title>
+    <style>
+        caption {
+            font-size: 35px;
+            padding-bottom: 10px;
+        }
+
+        table {
+            margin: 60px;
+            text-align: center;
+        }
+
+        table,
+        th,
+        tr,
+        td {
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <caption>Array Methods</caption>
+        <tr>
+            <th>Array Method Name</th>
+            <th>Description</th>
+            <th>Sample Program</th>
+            <th>Input</th>
+            <th>Output</th>
+        </tr>
+        <tr>
+            <td>concat ()</td>
+            <td>The concat() method is used to merge two or more arrays.
+                This method does not change the existing arrays, but instead returns a new array.
+            </td>
+            <td>
+
+                const array1 = ['a', 'b', 'c'];<br>
+                const array2 = ['d', 'e', 'f'];<br>
+                const array3 = array1.concat(array2);<br>
+                console.log(array3);
+
+            </td>
+            <td>
+
+                array1 = ['a', 'b', 'c'];<br>
+                array2 = ['d', 'e', 'f'];<br>
+
+            </td>
+            <td>
+
+                Array ["a", "b", "c", "d", "e", "f"]
+
+            </td>
+        </tr>
+        <tr>
+            <td>constructor ()</td>
+            <td>The Array() constructor is used to create Array objects.</td>
+            <td>
+
+                const fruits = ["Apple", "Banana"];<br>
+                console.log(fruits.length); <br>
+                console.log(fruits[0]);
+
+            </td>
+            <td>
+
+                fruits = ["Apple", "Banana"]
+
+            </td>
+            <td>
+
+                2 <br>
+                Apple
+
+            </td>
+        </tr>
+        <tr>
+            <td>entries ()</td>
+            <td>The entries() method returns a new Array Iterator object that contains the key/value pairs for each
+                index in the array.</td>
+            <td>
+
+                const array1 = ['a', 'b', 'c'];<br>
+                const iterator1 = array1.entries();<br>
+                console.log(iterator1.next().value);<br>
+                console.log(iterator1.next().value);<br>
+                console.log(iterator1.next().value);
+
+            </td>
+            <td>
+
+                array1 = ['a', 'b', 'c'];
+
+            </td>
+            <td>
+
+                Array [0, "a"] <br>
+                Array [1, "b"] <br>
+                Array [2, "c"]
+
+            </td>
+        </tr>
+        <tr>
+            <td>every ()</td>
+            <td>The every() method tests whether all elements in the array pass the test implemented by the provided
+                function. It returns a Boolean value.</td>
+            <td>
+                const isBelowThreshold = (currentValue) => currentValue < 40; <br>
+                    const array1 = [1, 30, 39, 29, 10, 13]; <br>
+                    console.log(array1.every(isBelowThreshold));
+            </td>
+            <td>
+                isBelowThreshold = (currentValue) => currentValue < 40; <br>
+                    array1 = [1, 30, 39, 29, 10, 13];
+            </td>
+            <td>
+                true
+            </td>
+        </tr>
+        <tr>
+            <td>filter ()</td>
+            <td>The filter() method creates a shallow copy of a portion of a given array, filtered down to just the elements from the given array that pass the test implemented by the provided function.</td>
+            <td>
+                const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];<br>
+                const result = words.filter(word => word.length > 6);<br>
+                console.log(result);
+            </td>
+            <td>words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];</td>
+            <td>Array ["exuberant", "destruction", "present"]</td>
+        </tr>
+        <tr>
+            <td>find ()</td>
+            <td>The find() method returns the first element in the provided array that satisfies the provided testing function. If no values satisfy the testing function, undefined is returned.</td>
+            <td>
+                const array1 = [5, 12, 8, 130, 44];<br>
+                const found = array1.find(element => element > 10);<br>
+                console.log(found);
+            </td>
+            <td>array1 = [5, 12, 8, 130, 44];</td>
+            <td>12</td>
+        </tr>
+        <tr>
+            <td>findIndex ()</td>
+            <td>The findIndex() method returns the index of the first element in an array that satisfies the provided testing function. If no elements satisfy the testing function, -1 is returned.</td>
+            <td>
+                const array1 = [5, 12, 8, 130, 44];
+                const isLargeNumber = (element) => element > 13;
+                console.log(array1.findIndex(isLargeNumber));
+            </td>
+            <td>array1 = [5, 12, 8, 130, 44];</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>findlast ()</td>
+            <td>The findLast() method iterates a typed array in reverse order and returns the value of the first element that satisfies the provided testing function. If no values satisfy the testing function, undefined is returned.</td>
+            <td>
+                function isNegative(element /*, index, array */) {<br>
+                    return element < 0; <br>
+                  } <br>
+                  const int8 = new Int8Array([10, 0, -10, 20, -30, 40, 50]); <br>
+                  console.log(int8.find(isNegative));
+            </td>
+            <td>Int8Array([10, 0, -10, 20, -30, 40, 50])</td>
+            <td>-10</td>
+        </tr>
+        <tr>
+            <td>findlastindex ()</td>
+            <td>The findLastIndex() method iterates the array in reverse order and returns the index of the first element that satisfies the provided testing function. If no elements satisfy the testing function, -1 is returned.</td>
+            <td>
+                const array1 = [5, 12, 50, 130, 44]; <br>
+                const isLargeNumber = (element) => element > 45;   <br> 
+                console.log(array1.findLastIndex(isLargeNumber));
+            </td>
+            <td>array1 = [5, 12, 50, 130, 44]; </td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>foreach ()</td>
+            <td>The forEach() method executes a provided function once for each array element.</td>
+            <td>
+                const array1 = ['a', 'b', 'c']; <br>
+                array1.forEach(element => console.log(element));
+            </td>
+            <td>array1 = ['a', 'b', 'c'];</td>
+            <td>
+                "a" <br>
+                "b" <br>
+                "c"
+            </td>
+        </tr>
+        <tr>
+            <td>indexof ()</td>
+            <td>The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present.</td>
+            <td>
+                const beasts = ['ant', 'bison', 'camel', 'duck', 'bison']; <br>
+                console.log(beasts.indexOf('bison')); <br>
+                console.log(beasts.indexOf('bison', 2)); <br>
+                console.log(beasts.indexOf('giraffe'));
+            </td>
+            <td>beasts = ['ant', 'bison', 'camel', 'duck', 'bison'];</td>
+            <td>
+                1 <br>
+                4 <br>
+                -1
+            </td>
+        </tr>
+        <tr>
+            <td>lastIndexof ()</td>
+            <td>The lastIndexOf() method returns the last index at which a given element can be found in the array, or -1 if it is not present. The array is searched backwards, starting at fromIndex.</td>
+            <td>
+                const animals = ['Dodo', 'Tiger', 'Penguin', 'Dodo']; <br>
+                console.log(animals.lastIndexOf('Dodo')); <br>
+                console.log(animals.lastIndexOf('Tiger'));
+            </td>
+            <td>animals = ['Dodo', 'Tiger', 'Penguin', 'Dodo']</td>
+            <td> 
+                3 <br>
+                1
+            </td>
+        </tr>
+        <tr>
+            <td>map ()</td>
+            <td>The map() method creates a new array populated with the results of calling a provided function on every element in the calling array.</td>
+            <td>
+                const array1 = [1, 4, 9, 16]; <br>
+                const map1 = array1.map(x => x * 2); <br>
+                console.log(map1);
+            </td>
+            <td>array1 = [1, 4, 9, 16]</td>
+            <td> Array [2, 8, 18, 32]</td>
+        </tr>
+        <tr>
+            <td>pop ()</td>
+            <td>The pop() method removes the last element from an array and returns that element. This method changes the length of the array.</td>
+            <td>
+                const plants = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato']; <br>
+                console.log(plants.pop()); <br>
+                console.log(plants); <br>
+                plants.pop(); <br>
+                console.log(plants);
+            </td>
+            <td>plants = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato'];</td>
+            <td>
+                "tomato" <br>
+                Array ["broccoli", "cauliflower", "cabbage", "kale"] <br>
+                Array ["broccoli", "cauliflower", "cabbage"]
+            </td>
+        </tr>
+        <tr>
+            <td>push ()</td>
+            <td>The push() method adds one or more elements to the end of an array and returns the new length of the array.</td>
+            <td>
+                const animals = ['pigs', 'goats', 'sheep']; <br>
+                const count = animals.push('cows'); <br>
+                console.log(count); <br>
+                console.log(animals); <br>
+                animals.push('chickens', 'cats', 'dogs'); <br>
+                console.log(animals);
+            </td>
+            <td>
+                animals = ['pigs', 'goats', 'sheep']; <br>
+                const count = animals.push('cows'); 
+            </td>
+            <td>
+                4 <br>
+                Array ["pigs", "goats", "sheep", "cows"] <br>
+                Array ["pigs", "goats", "sheep", "cows", "chickens", "cats", "dogs"]
+            </td>
+        </tr>
+        <tr>
+            <td>reduce ()</td>
+            <td>The reduce() method executes a user-supplied "reducer" callback function on each element of the array, in order, passing in the return value from the calculation on the preceding element. The final result of running the reducer across all elements of the array is a single value.</td>
+            <td>
+                const array1 = [1, 2, 3, 4]; <br>
+                const initialValue = 0; <br>
+                const sumWithInitial = array1.reduce( <br>
+                (accumulator, currentValue) => accumulator + currentValue,initialValue); <br>
+                console.log(sumWithInitial);
+            </td>
+            <td>array1 = [1, 2, 3, 4];</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>reverse ()</td>
+            <td>The reverse() method reverses an array in place and returns the reference to the same array, the first array element now becoming the last, and the last array element becoming the first. In other words, elements order in the array will be turned towards the direction opposite to that previously stated.</td>
+            <td>
+                const array1 = ['one', 'two', 'three']; <br>
+                console.log('array1:', array1); <br>
+                const reversed = array1.reverse(); <br>
+                console.log('reversed:', reversed); <br>
+                console.log('array1:', array1);
+            </td>
+            <td>array1 = ['one', 'two', 'three']</td>
+            <td>
+                "array1:" Array ["one", "two", "three"] <br>
+                "reversed:" Array ["three", "two", "one"] <br>
+                "array1:" Array ["three", "two", "one"]
+            </td>
+        </tr>
+        <tr>
+            <td>shift ()</td>
+            <td>The shift() method removes the first element from an array and returns that removed element. This method changes the length of the array.</td>
+            <td>
+                const array1 = [1, 2, 3]; <br>
+                const firstElement = array1.shift(); <br>
+                console.log(array1); <br>
+                console.log(firstElement);
+            </td>
+            <td>array1 = [1, 2, 3]</td>
+            <td>
+                Array [2, 3] <br>
+                1
+            </td>
+        </tr>
+        <tr>
+            <td>slice ()</td>
+            <td>The slice() method returns a shallow copy of a portion of an array into a new array object selected from start to end (end not included) where start and end represent the index of items in that array. The original array will not be modified.</td>
+            <td>
+                const animals = ['ant', 'bison', 'camel', 'duck', 'elephant']; <br>
+                console.log(animals.slice(2)); <br>
+                console.log(animals.slice(2, 4)); <br>
+                console.log(animals.slice(1, 5)); <br>
+                console.log(animals.slice(-2)); <br>
+                console.log(animals.slice(2, -1)); <br>
+                console.log(animals.slice());
+            </td>
+            <td>animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];</td>
+            <td>
+                Array ["camel", "duck", "elephant"] <br>
+                Array ["camel", "duck"] <br>
+                Array ["bison", "camel", "duck", "elephant"] <br>
+                Array ["duck", "elephant"] <br>
+                Array ["camel", "duck"] <br>
+                Array ["ant", "bison", "camel", "duck", "elephant"]
+            </td>
+        </tr>
+        <tr>
+            <td>sort ()</td>
+            <td>The sort() method sorts the elements of an array in place and returns the reference to the same array, now sorted. The default sort order is ascending, built upon converting the elements into strings, then comparing their sequences of UTF-16 code units values.</td>
+            <td>
+                const months = ['March', 'Jan', 'Feb', 'Dec']; <br>
+                months.sort(); <br>
+                console.log(months);
+            </td>
+            <td>months = ['March', 'Jan', 'Feb', 'Dec']</td>
+            <td>Array ["Dec", "Feb", "Jan", "March"]</td>
+        </tr>
+        <tr>
+            <td>splice ()</td>
+            <td>The splice() method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place. To access part of an array without modifying it, see slice().</td>
+            <td>
+                const months = ['Jan', 'March', 'April', 'June']; <br>
+                months.splice(1, 0, 'Feb'); <br>
+                console.log(months); <br>
+                months.splice(4, 1, 'May'); <br>
+                console.log(months);
+            </td>
+            <td>months = ['Jan', 'March', 'April', 'June']</td>
+            <td>
+                Array ["Jan", "Feb", "March", "April", "June"] <br>
+                Array ["Jan", "Feb", "March", "April", "May"]
+            </td>
+        </tr>
+        <tr>
+            <td>toLocaleString ()</td>
+            <td>The toLocaleString() method returns a string with a language-sensitive representation of this date. In implementations with Intl.DateTimeFormat API support, this method simply calls Intl.DateTimeFormat.</td>
+            <td>
+                const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0)); <br>
+                console.log(event.toLocaleString('en-GB', { timeZone: 'UTC' })); <br>
+                console.log(event.toLocaleString('ko-KR', { timeZone: 'UTC' }));
+            </td>
+            <td>event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));</td>
+            <td>
+                "20/12/2012, 03:00:00" <br>
+                "2012. 12. 20. 오전 3:00:00"
+            </td>
+        </tr>
+        <tr>
+            <td>tostring ()</td>
+            <td>The toString() method returns a string representing the specified array and its elements.</td>
+            <td>
+                const array1 = [1, 2, 'a', '1a'];  <br>
+                console.log(array1.toString());
+            </td>
+            <td>array1 = [1, 2, 'a', '1a']</td>
+            <td>"1,2,a,1a"</td>
+        </tr>
+        <tr>
+            <td>unshift ()</td>
+            <td>The unshift() method adds one or more elements to the beginning of an array and returns the new length of the array.</td>
+            <td>
+                const array1 = [1, 2, 3]; <br>
+                console.log(array1.unshift(4, 5)); <br>
+                console.log(array1);
+            </td>
+            <td>array1 = [1, 2, 3];</td>
+            <td>
+                5 <br>
+                Array [4, 5, 1, 2, 3]
+            </td>
+        </tr>        
+
+    </table>
+</body>
+
+</html>
